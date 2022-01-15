@@ -15,15 +15,32 @@
 
 <script type="text/babel">
 
-    ReactDOM.render(
-        <ul>
-            <li> Item 1 </li>
-            <li> Item 2 </li>
-            <li> Item 3 </li>
-        </ul>,
-        document.getElementById('react-container')
-    )
+    const MyComponent = () => {
+        return <div>
+            <h1> {this.props.text} </h1>
+            <p>Welcome to First React Component</p>
+        </div>
+    }
 
+
+
+    // The below is no longer necessary because the top is how a function is written
+ // class MyComponent extends React.Component{
+ //
+ //     render(){
+ //         return <div>
+ //             <h1>Hello World!</h1>
+ //             <p>Welcome to First React Component</p>
+ //         </div>
+ //     }
+ // }
+
+ ReactDOM.render(<div>
+     <MyComponent text= "Bye World!" />
+     <MyComponent text= "Hello World!" />
+     <MyComponent text= "Welcome World!" />
+
+ </div>, document.getElementById('react-container'))
 
 </script>
 
