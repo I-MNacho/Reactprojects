@@ -6,11 +6,11 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
-
 </head>
 <body>
 
 <div id="react-container"></div>
+<div id="react-secondContainer"></div>
 
 
 <script type="text/babel">
@@ -22,27 +22,28 @@
         </div>
     }
 
+    const MyComponentFirst = () => {
+        return <div>
+            <h1> {this.props.text} </h1>
+            <p>Welcome to First React Component</p>
+        </div>
+    }
 
-
-    // The below is no longer necessary because the top is how a function is written
- // class MyComponent extends React.Component{
- //
- //     render(){
- //         return <div>
- //             <h1>Hello World!</h1>
- //             <p>Welcome to First React Component</p>
- //         </div>
- //     }
- // }
 
  ReactDOM.render(<div>
      <MyComponent text= "Bye World!" />
-     <MyComponent text= "Hello World!" />
-     <MyComponent text= "Welcome World!" />
+     // <MyComponent text= "Hello World!" />
+     // <MyComponent text= "Welcome World!" />
 
  </div>, document.getElementById('react-container'))
 
+
+    ReactDOM.render(<div>
+        <MyComponentFirst text= "The first thing I learned in boating school was...." />
+    </div>, document.getElementById('react-secondContainer'))
+
 </script>
 
+<script src="map-filter.js"></script>
 </body>
 </html>
