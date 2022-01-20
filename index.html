@@ -42,7 +42,37 @@
         <MyComponentFirst text= "The first thing I learned in boating school was...." />
     </div>, document.getElementById('react-secondContainer'))
 
+    function App(){
+        const array = [ 23, 45, 67, 89, 12 ]
+
+        return (
+            <ul>
+                {
+                    array
+                        .filter(number => number > 60)
+                        .map(number => <li>{number}</li>)
+                }
+            </ul>
+        )
+    }
 </script>
+
+<div>
+    {names.filter(name => name.includes('J')).map(filteredName => (
+    <li>
+        {filteredName}
+    </li>
+    ))}
+</div>
+
+<div>
+    {people.filter(person =>
+    person.age < 60).map(filteredPerson => (
+    <li>
+        {filteredPerson.name}
+    </li>
+    ))}
+</div>
 
 <script src="map-filter.js"></script>
 </body>
